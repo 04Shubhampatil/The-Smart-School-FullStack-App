@@ -3,7 +3,7 @@ import axios from "axios";
 import { User, Calendar, Award, Image, BookOpen, Send,BookOpenText  } from "lucide-react";
 
 const StudentAdmin = () => {
-  const [corse, setCorse] = React.useState([]); // ✅ FIXED
+  const [corse, setCorse] = React.useState([]); 
 
   React.useEffect(() => {
     async function getTeachers() {
@@ -26,11 +26,13 @@ const StudentAdmin = () => {
       age: e.target[2].value,
       grade: e.target[3].value,
       courseId: e.target[4].value,
+      
     };
 
     try {
       const res = await axios.post("http://localhost:5500/api/student/add", studentData);
       console.log(res.data);
+      e.target.reset();
     } catch (error) {
       console.log(error, "API didn't work");
     }

@@ -23,6 +23,8 @@ const TeacherAdmin = () => {
     try {
       let res = await axios.post("http://localhost:5500/api/teacher/add", teacherData);
       console.log(res.data);
+            e.target.reset();
+
     } catch (error) {
       console.log(error, "API didn't");
     }

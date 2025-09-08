@@ -8,7 +8,9 @@ const CourseAdmin = () => {
   React.useEffect(() => {
     async function getTeachers() {
       try {
-        const res = await axios.get("http://localhost:5500/api/teacher/getList");
+        const res = await axios.get(
+          "http://localhost:5500/api/teacher/getList"
+        );
         setTeacher(res.data);
       } catch (error) {
         console.log(error, "API didn't work");
@@ -33,6 +35,7 @@ const CourseAdmin = () => {
         Coursedata
       );
       console.log(res.data);
+      e.target.reset();
     } catch (error) {
       console.log(error, "API didn't work");
     }
